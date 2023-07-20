@@ -6,10 +6,13 @@ import (
 )
 
 func main() {
-	map_with_pointer()
+	map_with_value()
+	//map_with_pointer()
 }
 
 func map_with_value() {
+
+	fmt.Println("Map with value")
 	n := 1_000_000
 	m := make(map[int][128]byte)
 	printAlloc("After m is allocated")
@@ -29,6 +32,8 @@ func map_with_value() {
 }
 
 func map_with_pointer() {
+
+	fmt.Println("Map with pointer")
 	n := 1_000_000
 	m := make(map[int]*[128]byte)
 	printAlloc("After m is allocated")
